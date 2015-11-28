@@ -78,9 +78,33 @@ aside.sidebar {
   overflow: auto;
   height: auto;
   flex: 4;
-  padding: 8px;
+  display: flex;
+  flex-direction: column;
   background-color: #1E1E1E;
   color: #D4D4D4;
+}
+.main .main-header {
+  min-height: 32px;
+  padding: 6px;
+  box-shadow: 0 -4px 40px 10px black;
+  margin-bottom: 4px;
+}
+.main .main-header ul {
+  display: flex;
+  margin: 0px;
+  padding: 0px;
+  list-style-type: none;
+}
+.main .main-header ul li {
+  margin-right: 12px;
+}
+.main .main-header .icons ul {
+  justify-content: flex-end;
+}
+.main .main-body {
+  overflow: auto;
+  height: auto;
+  padding: 8px;
 }
 .toolbar {
   width: 50px;
