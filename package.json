@@ -4,11 +4,27 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build:less": "lessc src/css/site.less build/css/site.css",
-    "build": "npm run build:less",
-    "watch": ""
+    "build": "gulp build",
+    "watch": "gulp watch"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-clean": "^0.3.1",
+    "gulp-if": "^2.0.0",
+    "gulp-less": "^3.0.5",
+    "gulp-load-plugins": "^1.1.0",
+    "gulp-nodemon": "^2.0.4",
+    "gulp-plumber": "^1.0.1",
+    "gulp-useref": "^3.0.3",
+    "gulp-watch": "^4.3.5",
+    "gulp-webserver": "^0.9.1",
+    "run-sequence": "^1.1.5"
+  },
+  "dependencies": {
+    "bluebird": "^3.0.5",
+    "lodash": "^3.10.1"
+  }
 }
