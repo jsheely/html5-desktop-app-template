@@ -1,0 +1,14 @@
+{
+  "name": "app-template",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:less": "lessc src/css/site.less build/css/site.css",
+    "build": "npm run build:less",
+    "watch": ""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
