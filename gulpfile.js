@@ -32,8 +32,14 @@ gulp.task('useref', (cb) => {
 gulp.task('jsx', () => {
 	return gulp.src([
 		'src/components/**/*.jsx',
-		'src/main.jsx',
+		'src/main.jsx'
 	])
+		.pipe(plumber({
+			errorHandler: function (err) {
+				console.log(err);
+				this.emit('end');
+			}
+		}))
 		.pipe(concat('main.js'))
 		.pipe(babel({
 			presets: ['es2015', 'react']
@@ -43,7 +49,7 @@ gulp.task('jsx', () => {
 
 
 gulp.task('build', (cb) => {
-	seq('clean', 'useref', 'jsx', cb);
+	seq('clean', ['useref', 'jsx'], cb);
 });
 
 gulp.task('start', (cb) => {
