@@ -6,6 +6,10 @@ I wanted an application template that mimics the toolbar, status bar, side panel
 
 It was modeled after the Visual Studio Code UI.
 
+## Versions
+- Html (master branch)
+- React (react branch)
+
 ## Browser support
 
 This template has been tested in:
