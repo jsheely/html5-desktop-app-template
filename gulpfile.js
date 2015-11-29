@@ -7,6 +7,8 @@ var watch = require('gulp-watch');
 var plumber = require('gulp-plumber');
 var webserver = require('gulp-webserver');
 var seq = require('run-sequence');
+var babel = require('gulp-babel');
+var concat = require('gulp-concat');
 
 gulp.task('clean', () => {
 	return gulp.src('build', { read: false })
@@ -27,8 +29,21 @@ gulp.task('useref', (cb) => {
 });
 
 
+gulp.task('jsx', () => {
+	return gulp.src([
+		'src/components/**/*.jsx',
+		'src/main.jsx',
+	])
+		.pipe(concat('main.js'))
+		.pipe(babel({
+			presets: ['es2015', 'react']
+		}))
+		.pipe(gulp.dest('./build/js'));
+});
+
+
 gulp.task('build', (cb) => {
-	seq('clean','useref', cb);
+	seq('clean', 'useref', 'jsx', cb);
 });
 
 gulp.task('start', (cb) => {
