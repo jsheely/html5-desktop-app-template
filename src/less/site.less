@@ -161,3 +161,27 @@ aside {
 .fill-area {
 	display: flex;
 }
+
+::-webkit-scrollbar {
+  width: 12px;
+  background-color: transparent;
+  border-top: 10px solid transparent;
+  border-bottom: 10px solid transparent;
+}
+
+::-webkit-scrollbar:hover {
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+::-webkit-scrollbar-thumb:vertical {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 100px;
+  background-clip: padding-box;
+  border: 2px solid transparent;
+  min-height: 10px;
+}
+
+::-webkit-scrollbar-thumb:vertical:active {
+  background: rgba(255, 255, 255, 0.5);
+  -webkit-border-radius: 100px;
+}
